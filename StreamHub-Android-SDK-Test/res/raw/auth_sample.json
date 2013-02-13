@@ -1,0 +1,1 @@
+{"status": "ok", "code": 200, "data": {"profile": {"profileUrl": null, "settingsUrl": null, "displayName": "test", "avatar": "url", "id": "user"}, "token": {"value": "secret", "ttl": 129600}, "version": "10040", "isModAnywhere": true, "permissions": {"moderator_key": "secret", "authors": [{"id": "user", "key": "secret"}]}}}
