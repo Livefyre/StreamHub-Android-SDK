@@ -13,21 +13,21 @@ Or, close the repo and add the streamhub_android_sdk as an Android dependency
 
 ## Packages
 
-At the time of writing, the StreamHub Android SDK exposes classes for requesting and sending to the StreamHub APIs. It make no assumptions about how to view the content.
+At the time of writing, the StreamHub Android SDK exposes classes for requesting and sending to the StreamHub APIs. It make no assumptions viewing the content.
 
 ### Clients
 
-The StreamHub Android SDK exposes several Client classes that can be used to request StreamHub APIs.
+The StreamHub Android SDK exposes several client classes that can be used to request StreamHub APIs.
 
-* [`AdminClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/AdminClient.html) - Exchange a user authentication token for user information, keys, and other metadata
+* [`AdminClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/AdminClient.html) - Exchange a user authentication token for user information, keys, and other metadata.
 
-* [`BootstrapClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/BootstrapClient.html) - Get recent Content and metadata about a particular Collection
+* [`BootstrapClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/BootstrapClient.html) - Get recent Content and metadata about a particular Collection.
 
-* [`PublicAPIClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/PublicAPIClient.html) - Request the Hottest Collections in a Network or get recent Content from a specific user
+* [`PublicAPIClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/PublicAPIClient.html) - Request the Hottest Collections in a Network or get recent Content from a specific user.
 
-* [`StreamClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/StreamClient.html) - Poll a stream for a collection to retrieve new, updated, and deleted content
+* [`StreamClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/StreamClient.html) - Poll a Collection to retrieve new, updated, and deleted Content when it becomes available.
 
-* [`WriteClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/WriteClient.html) - Post content, flag content, like content in a collection
+* [`WriteClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/WriteClient.html) - Post Content, flag Content, like/unlike Content in a Collection. User authentication tokens will generally be required to use methods in this class.
 
 # Deving
 
