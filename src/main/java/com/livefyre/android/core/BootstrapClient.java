@@ -47,7 +47,7 @@ public class BootstrapClient {
                                String siteId,
                                String articleId,
                                AsyncHttpResponseHandler handler,
-                               int... pageNumber)
+                               Object... pageNumber)
             throws UnsupportedEncodingException
     {
         final String bootstrapEndpoint = generateBootstrapEndpoint(networkId, siteId, articleId, pageNumber);
@@ -85,7 +85,7 @@ public class BootstrapClient {
     public static String generateBootstrapEndpoint(String networkId,
                                               String siteId,
                                               String articleId,
-                                              int... pageNumber)
+                                              Object... pageNumber)
             throws UnsupportedEncodingException
     {
         // Casting
@@ -104,11 +104,15 @@ public class BootstrapClient {
             uriBuilder.appendPath("init");
         }
         else {
-            String page = pageNumber[0] + ".json";
-            uriBuilder.appendPath(page);
+            if(pageNumber[0] instanceof Integer) {
+                String page = pageNumber[0] + ".json";
+                uriBuilder.appendPath(page);
+            }
+            else {
+                throw new IllegalArgumentException("Bootstrap page number must be an Integer");
+            }
         }
 
-        System.out.println(uriBuilder.toString());
         return uriBuilder.toString();
     }
 }
