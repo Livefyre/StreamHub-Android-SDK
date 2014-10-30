@@ -9,7 +9,7 @@ Read the docs: http://livefyre.github.com/StreamHub-Android-SDK/
 
 Clone the repo and drop the StreamHub-Android-SDK.jar file into your project's libs folder
 
-Or, close the repo and add the streamhub-android-sdk as an Android dependency
+Or, clone the repo and add the streamhub-android-sdk as an Android dependency
 
 You can customize configurations in [Config.java](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/src/livefyre/streamhub/Config.java) file. This SDK will work for both [Comments](https://github.com/Livefyre/StreamHub-Android-SDK/tree/master/examples/commentstream) and [Reviews](https://github.com/Livefyre/StreamHub-Android-Reviews-App) applications of Livefyre streamhub.
 ## Packages
