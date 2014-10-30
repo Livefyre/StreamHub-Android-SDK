@@ -1,0 +1,38 @@
+apply plugin: 'android'
+apply plugin: 'maven'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "19.1.0"
+
+    defaultConfig {
+        minSdkVersion 8
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+
+dependencies {
+    compile 'com.livefyre:StreamHub-Android-SDK:0.1.1'
+}
+
