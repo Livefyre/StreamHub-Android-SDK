@@ -2,6 +2,7 @@ package com.livefyre.android.core;
 
 import android.net.Uri;
 import android.net.Uri.Builder;
+import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -53,9 +54,9 @@ public class BootstrapClient {
             throws UnsupportedEncodingException
     {
         final String bootstrapEndpoint = generateBootstrapEndpoint(networkId, siteId, articleId, opts);
-        //Log.d("SDK","Before call "+bootstrapEndpoint);
+        Log.d("SDK","Before call "+bootstrapEndpoint);
         HttpClient.client.get(bootstrapEndpoint, handler);
-        //Log.d("SDK","After call");
+        Log.d("SDK","After call");
     }
 
     /**
@@ -109,7 +110,6 @@ public class BootstrapClient {
             uriBuilder.appendPath("init");
         }
         else {
-            System.out.println(opts[0].get("pageNumber"));
             if(opts[0].get("pageNumber") instanceof Integer) {
                 String page = opts[0].get("pageNumber").toString() + ".json";
                 uriBuilder.appendPath(page);
