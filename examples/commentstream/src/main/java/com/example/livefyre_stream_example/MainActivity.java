@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.*;
 
 public class MainActivity extends Activity {
 
@@ -28,8 +28,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         try {
-            BootstrapClient.getInit("labs.fyre.co", "320568", "custom-1379372287037", new InitCallback());
-
+            Map<String,Integer> opts = new HashMap<String,Integer>();
+            opts.put("pageNumber", new Integer(1));
+            BootstrapClient.getBootstrapPage("labs.fyre.co", "320568", "custom-1379372287037", new InitCallback(), opts);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
