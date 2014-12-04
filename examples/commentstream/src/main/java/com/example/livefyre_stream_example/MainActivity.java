@@ -28,8 +28,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         try {
-            Map<String,Integer> opts = new HashMap<String,Integer>();
-            opts.put("pageNumber", new Integer(1));
+            Map<String,Object> opts = new HashMap<String,Object>();
+            opts.put("pageNumber", Integer.valueOf(2));
             BootstrapClient.getBootstrapPage("labs.fyre.co", "320568", "custom-1379372287037", new InitCallback(), opts);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
 
     private class InitCallback extends JsonHttpResponseHandler {
         public void onSuccess(JSONObject data) {
+            System.out.println(data.toString());
             try {
                 JSONObject authors = data.getJSONObject("headDocument").getJSONObject("authors");
 
