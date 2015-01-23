@@ -144,7 +144,7 @@ public class WriteClient {
 		// .appendQueryParameter("collection_id", collectionId));
 
 		 String url = (new Uri.Builder().scheme(Config.scheme)
-				.authority(Config.quillDomain + "." + Config.networkId)
+				.authority(Config.networkId + "." + Config.quillDomain)
 				.appendPath("api").appendPath("v3.0").appendPath("message").appendPath(""))+
 				contentId+(new Uri.Builder().appendPath("").appendPath("flag")
 				.appendPath(flags[action.value()])
@@ -170,7 +170,7 @@ public class WriteClient {
 			String collectionId, String userToken, String endpoint)
 			throws MalformedURLException {
 		final Builder uriBuilder = new Uri.Builder().scheme(Config.scheme)
-				.authority(Config.quillDomain + "." + Config.networkId)
+				.authority(Config.networkId + "." + Config.quillDomain)
 				.appendPath("api").appendPath("v3.0").appendPath("collection")
 				.appendPath(collectionId).appendPath("post");
 		if (LFSConstants.LFSPostTypeReview == endpoint)
@@ -210,7 +210,7 @@ public class WriteClient {
 		// + (new Uri.Builder().appendQueryParameter("lftoken", userToken));
 
 		final Builder uriBuilder = new Uri.Builder().scheme(Config.scheme)
-				.authority(Config.quillDomain + "." + Config.networkId)
+				.authority(Config.networkId + "." + Config.quillDomain)
 				.appendPath("api").appendPath("v3.0").appendPath("collection")
 				.appendPath(collectionId).appendPath(action)
 				.appendPath(contentId).appendPath("")
@@ -237,7 +237,7 @@ public class WriteClient {
 		// Build the URL
 
 		String url = new Uri.Builder().scheme(Config.scheme)
-				.authority(Config.quillDomain + "." + Config.networkId)
+				.authority(Config.networkId + "." + Config.quillDomain)
 				.appendPath("api").appendPath("v3.0").appendPath("message").appendPath("")+contentId+
 				(new Uri.Builder().appendPath(actions[action.value()]).appendPath("")
 				.appendQueryParameter("lftoken", token)
@@ -279,7 +279,7 @@ public class WriteClient {
 		
 		
 		final Builder uriBuilder = new Uri.Builder().scheme(Config.scheme)
-				.authority(Config.quillDomain + "." + Config.networkId)
+				.authority(Config.networkId + "." + Config.quillDomain)
 				.appendPath("api").appendPath("v3.0").appendPath("author");
 		String url=uriBuilder+""+authorId+(new Uri.Builder().appendPath("ban").appendPath("").appendQueryParameter("lftoken", token));
 				

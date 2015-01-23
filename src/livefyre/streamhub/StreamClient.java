@@ -19,8 +19,8 @@ public class StreamClient {
 		final Builder uriBuilder = new Uri.Builder()
 				.scheme(Config.scheme)
 				.authority(
-						Config.streamDomain + "."
-								+ Config.getHostname(networkId))
+						Config.getHostname(networkId) + "."
+						Config.streamDomain)
 				.appendPath("v3.1").appendPath("collection")
 				.appendPath(collectionId).appendPath("").appendPath(eventId);
 

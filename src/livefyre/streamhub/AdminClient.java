@@ -63,7 +63,7 @@ public class AdminClient {
     {
         Builder uriBuilder = new Uri.Builder()
                 .scheme(Config.scheme)
-                .authority(Config.adminDomain + "." +Config.networkId)
+                .authority(Config.networkId + "." + Config.adminDomain)
                 .appendPath("api")
                 .appendPath("v3.0")
                 .appendPath("auth")
