@@ -14,31 +14,29 @@ import java.util.*;
  * @author zjj
  */
 public class BootstrapClient {
+    public static final String TAG = BootstrapClient.class.getSimpleName();
     /**
      * Performs a network request on a different thread and delivers a message to the callback.
      * A JSON object with the results will be bound to the message.
      *
-     * @param networkId The collection's network as identified by domain, i.e. livefyre.com.
      * @param siteId    The Id of the article's site.
      * @param articleId The Id of the collection's article.
      * @param handler   Response handler
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
      */
-    public static void getInit(String networkId,
-                               String siteId,
+    public static void getInit(String siteId,
                                String articleId,
                                AsyncHttpResponseHandler handler)
             throws UnsupportedEncodingException
     {
-        getBootstrapPage(networkId, siteId, articleId, handler);
+        getBootstrapPage(siteId, articleId, handler);
     }
 
     /**
      * Performs a network request on a different thread and delivers a message to the callback.
      * A JSON object with the results will be bound to the message.
      *
-     * @param networkId The collection's network as identified by domain, i.e. livefyre.com.
      * @param siteId    The Id of the article's site.
      * @param articleId The Id of the collection's article.
      * @param opts Optional parameters to pass in. Currently takes in pageNumber param for bootstrap page number.
@@ -46,14 +44,13 @@ public class BootstrapClient {
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
      */
-    public static void getBootstrapPage(String networkId,
-                               String siteId,
+    public static void getBootstrapPage(String siteId,
                                String articleId,
                                AsyncHttpResponseHandler handler,
                                Map<String, Object>... opts)
             throws UnsupportedEncodingException
     {
-        final String bootstrapEndpoint = generateBootstrapEndpoint(networkId, siteId, articleId, opts);
+        final String bootstrapEndpoint = generateBootstrapEndpoint(siteId, articleId, opts);
         Log.d("SDK", "Requesting " + bootstrapEndpoint);
         HttpClient.client.get(bootstrapEndpoint, handler);
     }
@@ -61,25 +58,22 @@ public class BootstrapClient {
     /**
      * Generates an init endpoint with the specified parameters.
      *
-     * @param networkId The collection's network as identified by domain, i.e. livefyre.com.
      * @param siteId    The Id of the article's site.
      * @param articleId The Id of the collection's article.
      * @return The init endpoint with the specified parameters.
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
      */
-    public static String generateInitEndpoint(String networkId,
-                                              String siteId,
+    public static String generateInitEndpoint(String siteId,
                                               String articleId)
             throws UnsupportedEncodingException
     {
-        return generateBootstrapEndpoint(networkId, siteId, articleId);
+        return generateBootstrapEndpoint( siteId, articleId);
     }
 
     /**
      * Generates a general bootstrap endpoint with the specified parameters.
      *
-     * @param networkId The collection's network as identified by domain, i.e. livefyre.com.
      * @param siteId    The Id of the article's site.
      * @param articleId The Id of the collection's article.
      * @param opts Optional parameters to pass in. Currently takes in pageNumber param for Bootstrap page number.
@@ -87,7 +81,7 @@ public class BootstrapClient {
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
      */
-    public static String generateBootstrapEndpoint(String networkId,
+    public static String generateBootstrapEndpoint(
                                               String siteId,
                                               String articleId,
                                               Map<String, Object>... opts)
@@ -98,10 +92,11 @@ public class BootstrapClient {
 
         // Build the URL
         Builder uriBuilder = new Uri.Builder()
-                .scheme(Config.scheme)
-                .authority(Config.bootstrapDomain + "." + Config.getHostname(networkId))
+                .scheme(LivefyreConfig.scheme)
+                .authority(LivefyreConfig.bootstrapDomain + "." + LivefyreConfig.getConfiguredNetworkID())
                 .appendPath("bs3")
-                .appendPath(networkId)
+                .appendPath("v3.1")
+                .appendPath(LivefyreConfig.getConfiguredNetworkID())
                 .appendPath(siteId)
                 .appendPath(article64);
 
