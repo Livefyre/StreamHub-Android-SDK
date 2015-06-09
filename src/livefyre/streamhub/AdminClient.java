@@ -17,14 +17,12 @@ public class AdminClient {
     /**
      * Performs a network request on a different thread and delivers a message to the callback.
      * A JSON object with the results will be bound to the message.
-     * <p/>
      * It is necessary to provide either a collectionId or a siteId combined with an articleId.
      *
      * @param userToken    The lftoken representing a user.
      * @param collectionId The Id of the collection to auth against.
      * @param articleId    The Id of the collection's article.
      * @param siteId       The Id of the article's site.
-     * @param networkId    The collection's network as identified by domain, i.e. livefyre.com.
      * @param handler      Implement "handleMessage" for this callback.
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
@@ -33,12 +31,11 @@ public class AdminClient {
                                         String collectionId,
                                         String articleId,
                                         String siteId,
-                                        String networkId,
                                         JsonHttpResponseHandler handler)
             throws UnsupportedEncodingException
     {
         final String authEndpoint =
-                generateAuthEndpoint(userToken, collectionId, articleId, siteId, networkId);
+                generateAuthEndpoint(userToken, collectionId, articleId, siteId);
         HttpClient.client.get(authEndpoint, handler);
     }
 
@@ -49,7 +46,6 @@ public class AdminClient {
      * @param collectionId The Id of the collection to auth against.
      * @param articleId    The Id of the collection's article.
      * @param siteId       The Id of the article's site.
-     * @param networkId    The collection's network as identified by domain, i.e. livefyre.com.
      * @return The auth endpoint with the specified parameters.
      * @throws UnsupportedEncodingException
      * @throws MalformedURLException
@@ -57,13 +53,12 @@ public class AdminClient {
     public static String generateAuthEndpoint(String userToken,
                                               String collectionId,
                                               String articleId,
-                                              String siteId,
-                                              String networkId)
+                                              String siteId)
             throws UnsupportedEncodingException
     {
         Builder uriBuilder = new Uri.Builder()
-                .scheme(Config.scheme)
-                .authority(Config.adminDomain + "." +Config.networkId)
+                .scheme(LivefyreConfig.scheme)
+                .authority(LivefyreConfig.adminDomain + "." + LivefyreConfig.getConfiguredNetworkID())
                 .appendPath("api")
                 .appendPath("v3.0")
                 .appendPath("auth")
