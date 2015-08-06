@@ -18,6 +18,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:20.0.0'
-    compile files('libs/android-async-http.jar')
+    compile 'com.android.support:support-v4:22.2.1'
+    compile files('libs/android-async-http-1.4.8.jar')
 }

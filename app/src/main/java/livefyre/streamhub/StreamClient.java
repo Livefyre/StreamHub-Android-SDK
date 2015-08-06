@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,10 +46,10 @@ public class StreamClient {
                 collectionId, eventId);
         HttpClient.client.get(streamEndpoint, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(String response) {
-                handler.onSuccess(response);
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                handler.onSuccess(statusCode, headers, responseBody);
+                String response = new String(responseBody);
                 try {
-
                     if (response != null) {
                         Log.d("Stream Clint Call", "Success" + response);
                         JSONObject responseJson = new JSONObject(response);
@@ -60,7 +61,6 @@ public class StreamClient {
                             pollStreamEndpoint(collectionId,
                                     lastEvent, handler);
                         }
-
                     }
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
@@ -72,8 +72,7 @@ public class StreamClient {
             }
 
             @Override
-            public void onFailure(Throwable error, String content) {
-                super.onFailure(error, content);
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 try {
                     pollStreamEndpoint(collectionId, eventId, handler);
                 } catch (IOException e) {
@@ -84,7 +83,6 @@ public class StreamClient {
                     e.printStackTrace();
                 }
             }
-
         });
     }
 }
