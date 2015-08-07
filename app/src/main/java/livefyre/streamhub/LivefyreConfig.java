@@ -1,7 +1,6 @@
 package livefyre.streamhub;
 
 public class LivefyreConfig {
-    // comments
 
     public static String scheme = "http";
     public static String environment = "livefyre.com";
@@ -9,7 +8,6 @@ public class LivefyreConfig {
     public static String quillDomain = "quill";
     public static String adminDomain = "admin";
     public static String streamDomain = "stream1";
-    //	public static String networkId ="labs.fyre.co";
     private static String networkID = null;
 
     public static void setLivefyreNetworkID(String networkID) {
