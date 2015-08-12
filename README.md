@@ -59,7 +59,7 @@ Note: You can customize configurations from within   [Config.java](https://githu
 
 * Reviews Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-Reviews-App
 
-* Comments Demonstrative Example: In progress
+* Comments Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-Comments-App
 
 # SDK Client Classes
 
