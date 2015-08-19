@@ -14,7 +14,7 @@ Get the fresh StreamHub-Android-SDK from Github
 
 1.  Start with an existing project or create a new one
 
-1. 	To import StreamHub-Android-SDK into your workspace go to: File > Import Project > General > Existing Project into Workspace 
+1. 	To import StreamHub-Android-SDK into your workspace go to: File > Import Project > General > Existing Project into Workspace
 2. 	Browse and select StreamHub-Android-SDK; it should now show in the package explorer
 
 3.	Right click on your project and select properties then select Android tab
@@ -75,6 +75,24 @@ The StreamHub Android SDK exposes several Client classes that can be used to req
 
 # License
 
-Copyright 2014 Livefyre Inc.
+Copyright (c) 2015 Livefyre, Inc.
 
 Licensed under the MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
