@@ -53,7 +53,7 @@ dependencies {
 include ':streamHubAndroidSDK'
 ```
 
-Note: You can customize configurations from within   [Config.java](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/src/livefyre/streamhub/Config.java).
+Note: You can customize configurations from within   [LivefyreConfig.java](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/app/src/main/java/livefyre/streamhub/LivefyreConfig.java).
 
 # Sample App
 
