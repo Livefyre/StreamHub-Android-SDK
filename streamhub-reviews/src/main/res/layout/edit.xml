@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:background="#ffffff" >
+
+        <ScrollView
+            android:id="@+id/editReviewScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingTop="25dp" >
+
+                <TextView
+                    android:id="@+id/editReviewTitleTv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/Title"
+                    android:textColor="#000"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/editReviewTitleEt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="#ffffff"
+                    android:hint="@string/Title"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="#4C4C4C"
+                    android:textColorHint="#999999"
+                    android:textSize="24sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginTop="8dp"
+                    android:background="#D6D6D6" />
+
+                <RatingBar
+                    android:id="@+id/editReviewRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/big_starbar"
+                    android:stepSize=".5" />
+
+                <TextView
+                    android:id="@+id/editReviewBodyTv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/Description"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:visibility="invisible"
+                    android:layout_marginBottom="5dp" />
+
+                <EditText
+                    android:id="@+id/editReviewBodyEt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="#ffffff"
+                    android:hint="@string/Description"
+                    android:lineSpacingExtra="5dp"
+                    android:textColor="#4C4C4C"
+                    android:textColorHighlight="#999999"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

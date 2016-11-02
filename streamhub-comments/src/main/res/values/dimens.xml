@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- App bar dimens -->
+    <dimen name="comment_font_size_in_app_bar">20sp</dimen>
+
+    <!-- Main View - Deleted Cell  -->
+    <dimen name="deletedReviewerImageHeight">20dp</dimen>
+    <dimen name="deletedReviewerFeaturedImageWidth">20dp</dimen>
+    <dimen name="activity_image_height">200dp</dimen>
+
+
+</resources>

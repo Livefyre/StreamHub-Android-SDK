@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Livefyre Comments</string>
+    <string name="action_settings">Post</string>
+    <string name="comments_str">Comments</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_comment">Comment</string>
+    <string name="title_activity_new">NewActivity</string>
+    <string name="addPhoto">Add Photo</string>
+
+</resources>

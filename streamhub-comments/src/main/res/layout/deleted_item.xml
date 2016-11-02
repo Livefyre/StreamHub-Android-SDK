@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:id="@+id/deletedCell">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/reviewerFeaturedImage"
+            android:layout_width="@dimen/deletedReviewerImageHeight"
+            android:layout_height="@dimen/deletedReviewerFeaturedImageWidth"
+            android:src="@drawable/icon_trash" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:text="The content has been deleted"
+            android:textColor="#cdcdcd"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/mainLine"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/detailReplyNotification"
+
+
+        android:background="#d6d6d6" />
+
+</LinearLayout>
