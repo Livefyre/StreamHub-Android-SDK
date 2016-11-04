@@ -236,6 +236,25 @@ public class NewActivity extends BaseActivity {
 
     //New Reply
     public class newReplyCallback extends JsonHttpResponseHandler {
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+            super.onSuccess(statusCode, headers, response);
+            dismissProgressDialog();
+            showAlert("Reply Posted Successfully.", "OK", null);
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("result", 1);
+            setResult(RESULT_OK, returnIntent);
+        }
+
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, String responseString) {
+            super.onSuccess(statusCode, headers, responseString);
+            dismissProgressDialog();
+            showAlert("Reply Posted Successfully.", "OK", null);
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("result", 1);
+            setResult(RESULT_OK, returnIntent);
+        }
 
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -245,6 +264,29 @@ public class NewActivity extends BaseActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("result", 1);
             setResult(RESULT_OK, returnIntent);
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+            super.onFailure(statusCode, headers, throwable, errorResponse);
+            showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+            super.onFailure(statusCode, headers, throwable, errorResponse);
+            dismissProgressDialog();
+            try {
+                if (!errorResponse.isNull("msg")) {
+                    showAlert(errorResponse.getString("msg"), "TRY AGAIN", tryAgain);
+                } else {
+                    showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
+
+            }
         }
 
         @Override
@@ -274,6 +316,44 @@ public class NewActivity extends BaseActivity {
             super.onSuccess(statusCode, headers, response);
             dismissProgressDialog();
             showAlert("Reply Edited Successfully.", "OK", null);
+        }
+
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+            super.onSuccess(statusCode, headers, response);
+            dismissProgressDialog();
+            showAlert("Reply Edited Successfully.", "OK", null);
+        }
+
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, String responseString) {
+            super.onSuccess(statusCode, headers, responseString);
+            dismissProgressDialog();
+            showAlert("Reply Edited Successfully.", "OK", null);
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+            super.onFailure(statusCode, headers, throwable, errorResponse);
+            dismissProgressDialog();
+            dismissProgressDialog();
+            try {
+                if (!errorResponse.isNull("msg")) {
+                    showAlert(errorResponse.getString("msg"), "TRY AGAIN", tryAgain);
+                } else {
+                    showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
+            }
+        }
+
+        @Override
+        public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+            super.onFailure(statusCode, headers, throwable, errorResponse);
+            dismissProgressDialog();
+            showAlert("Something went wrong.", "TRY AGAIN", tryAgain);
         }
 
         @Override
