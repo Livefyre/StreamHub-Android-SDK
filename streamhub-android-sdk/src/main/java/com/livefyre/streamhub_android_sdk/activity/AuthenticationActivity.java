@@ -68,7 +68,7 @@ public class AuthenticationActivity extends BaseActivity {
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-            } else if (url.equals("http://livefyre-cdn-dev.s3.amazonaws.com/demos/lfep2-comments.html#")){
+            } else if (url.equals("https://livefyre-cdn-dev.s3.amazonaws.com/demos/lfep2-comments.html#")){
                 try {
                     showProgressDialog();
                     AuthenticationClient.authenticate(
