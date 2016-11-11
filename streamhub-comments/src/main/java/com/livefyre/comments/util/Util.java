@@ -98,7 +98,7 @@ public class Util {
 	public static String getYoutubeVideoId(String youtubeUrl)
 	{
 		String video_id="";
-		if (youtubeUrl != null && youtubeUrl.trim().length() > 0 && youtubeUrl.startsWith("http"))
+		if (youtubeUrl != null && youtubeUrl.trim().length() > 0 && youtubeUrl.startsWith("https"))
 		{
 
 			String expression = "^.*((youtu.be"+ "\\/)" + "|(v\\/)|(\\/u\\/w\\/)|(embed\\/)|(watch\\?))\\??v?=?([^#\\&\\?]*).*"; // var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
