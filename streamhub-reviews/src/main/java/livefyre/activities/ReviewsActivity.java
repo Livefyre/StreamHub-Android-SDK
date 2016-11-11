@@ -304,6 +304,7 @@ public class ReviewsActivity extends BaseActivity implements ContentUpdateListen
         @Override
         public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
             super.onSuccess(statusCode, headers, response);
+            swipeView.setRefreshing(false);
             application.printLog(false, TAG + "-InitCallback-onSuccess", response.toString());
             (new ParseContent()).execute(response);
 
@@ -311,6 +312,7 @@ public class ReviewsActivity extends BaseActivity implements ContentUpdateListen
 
         public void onSuccess(int statusCode, Header[] headers, String responseString) {
             super.onSuccess(statusCode, headers, responseString);
+            swipeView.setRefreshing(false);
             application.printLog(false, TAG + "-InitCallback-onSuccess", responseString.toString());
             try {
                 (new ParseContent()).execute(new JSONObject(responseString));
