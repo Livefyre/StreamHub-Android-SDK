@@ -6,72 +6,60 @@ Make Android apps powered by Livefyre StreamHub
 
 Read the docs: http://livefyre.github.com/StreamHub-Android-SDK/
 
-This StreamHub-Android-SDK can be used for both Eclipse and Android Studio
+Install Android Studio [Here](https://developer.android.com/studio/index.html?gclid=Cj0KEQiA9ZXBBRC29cPdu7yuvrQBEiQAhyQZ9FALExzWUoc2Zj-G4AG3HzhEha0pg6B274OR9jAOalsaApnX8P8HAQ).
 
-**Steps to use in Eclipse:**
+Get the fresh StreamHub-Android-SDK from Github.
 
-Get the fresh StreamHub-Android-SDK from Github
+**Steps to run streamHub-android-sdk and sample apps**
 
-1.  Start with an existing project or create a new one
+1. Open Android Studio. 
 
-1. 	To import StreamHub-Android-SDK into your workspace go to: File > Import Project > General > Existing Project into Workspace
-2. 	Browse and select StreamHub-Android-SDK; it should now show in the package explorer
+2. Select 'Open an Android Studio project'.
 
-3.	Right click on your project and select properties then select Android tab
+3. Browse and select StreamHub-Android-SDK -> select Ok.
 
-4.	Under the Library section, select Add button then select StreamHub-Android-SDK from the list of libraries
+**Steps to use streamHub-android-sdk in your Android Studio project:**
 
-5.  Click on Apply and OK.
+1.  Start with an existing project or create a new one.
 
-____________
+2.	Select File -> New -> Import Module.
 
-**Steps to use in Android Studio:**
+3.  Select the browse option(...) next to the 'Source Directory'. 
 
-Get the fresh StreamHub-Android-SDK from Github
+4.  Select streamHub-android-sdk in StreamHub-Android-SDK (.../StreamHub-Android-SDK/streamHub-android-sdk).
 
-1.  Start with an existing project or create a new one
-
-1.	Right click on your project and select 'Open Module Settings'
-
-2.	Select the **'+'** button on the top left corner of window
-
-3.	Select "Import Existing Project"  (In new version of Android studio you can find "Import Existing Project" option under "More Modules")
-
-4.  Browse and select StreamHub-Android-SDK
- * Android Studio may request to convert the SDK to gradle version; if this occurs, select next and finish
-
-5.  Add the following dependency by going to project folder -> "app" folder -> "build.gradle" file under dependencies as follows:
+5.  Add the dependency by going to project folder -> "app"(Your Module Name) folder -> "build.gradle" file under dependencies as follows:
 
 ```
 dependencies {
-  compile project(':streamHubAndroidSDK')
+  compile project(':streamhub-android-sdk')
 }
 ```
-**Make sure that the following line is in your project folder -> settings.gradle file**
+6. Make sure that the following line is in your project folder -> settings.gradle file
 
 ```
-include ':streamHubAndroidSDK'
+include ':streamhub-android-sdk'
 ```
 
-Note: You can customize configurations from within   [LivefyreConfig.java](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/app/src/main/java/livefyre/streamhub/LivefyreConfig.java).
+Note: You can customize configurations from within   [LivefyreConfig.java](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/streamhub-android-sdk/src/main/java/com/livefyre/streamhub_android_sdk/util/LivefyreConfig.java).
 
 # Sample App
 
-* Reviews Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-Reviews-App
+* Reviews Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-SDK/tree/master/streamhub-reviews
 
-* Comments Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-Comments-App
+* Comments Demonstrative Example: https://github.com/Livefyre/StreamHub-Android-SDK/tree/master/streamhub-comments
 
 # SDK Client Classes
 
 The StreamHub Android SDK exposes several Client classes that can be used to request StreamHub APIs.
 
-* [`AdminClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/AdminClient.html) - Exchange a user authentication token for user information, keys, and other metadata
+* [`AdminClient`](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/streamhub-android-sdk/src/main/java/com/livefyre/streamhub_android_sdk/network/AdminClient.java) - Exchange a user authentication token for user information, keys, and other metadata
 
-* [`BootstrapClient`](http://livefyre.github.com/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/BootstrapClient.html) - Get recent Content and metadata about a particular Collection
+* [`BootstrapClient`](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/streamhub-android-sdk/src/main/java/com/livefyre/streamhub_android_sdk/network/BootstrapClient.java) - Get recent Content and metadata about a particular Collection
 
-* [`StreamClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/StreamClient.html) - Poll a stream for a collection to retrieve new, updated, and deleted content
+* [`StreamClient`](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/streamhub-android-sdk/src/main/java/com/livefyre/streamhub_android_sdk/network/StreamClient.java) - Poll a stream for a collection to retrieve new, updated, and deleted content
 
-* [`WriteClient`](http://livefyre.github.io/StreamHub-Android-SDK/com/livefyre/streamhub_android_sdk/WriteClient.html) - Post content, flag content, like content in a collection
+* [`WriteClient`](https://github.com/Livefyre/StreamHub-Android-SDK/blob/master/streamhub-android-sdk/src/main/java/com/livefyre/streamhub_android_sdk/network/WriteClient.java) - Post content, flag content, like content in a collection
 
 # License
 
