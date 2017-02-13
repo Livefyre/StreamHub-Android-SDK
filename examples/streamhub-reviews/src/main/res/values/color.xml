@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0F98EC</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="ash">#848484</color>
+    <color name="lineColor">#D6D6D6</color>
+    <color name="textHint">#999999</color>
+    <color name="textColor">#4C4C4C</color>
+    <color name="Moderator">#0f98ec</color>
+    <color name="Feature">#feb33b</color>
+</resources>

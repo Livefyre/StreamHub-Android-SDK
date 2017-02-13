@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar">
+
+        <EditText
+            android:id="@+id/newReplyEt"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:hint="Write Your Reply here..."
+            android:lineSpacingExtra="5dp"
+            android:padding="16dp"
+            android:textColor="#4C4C4C"
+            android:textColorHighlight="#999999"
+            android:textSize="14sp" />
+    </ScrollView>
+
+</RelativeLayout>

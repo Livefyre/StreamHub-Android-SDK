@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/colorPrimary"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activityIconLL"
+            android:layout_width="50dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="32dp"
+                android:id="@+id/activityIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/activityIconLL"
+            android:id="@+id/activityTitle"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/comment_font_size_in_app_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/actionLL"
+            android:visibility="gone"
+           android:paddingLeft="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:text="AAAA"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:layout_marginRight="16dp"
+                android:id="@+id/actionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

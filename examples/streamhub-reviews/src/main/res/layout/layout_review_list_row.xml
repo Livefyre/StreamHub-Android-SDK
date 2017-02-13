@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="16dp">
+
+    <RelativeLayout
+        android:id="@+id/reviewerImageAndRevieweridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/reviewerImage"
+            android:layout_width="@dimen/reviewerImagewidth"
+            android:layout_height="@dimen/reviewerImageHight" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/reviewerImage"
+            android:orientation="vertical"
+            android:paddingLeft="16dp">
+
+            <RelativeLayout
+                android:id="@+id/revieweridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/reviewedDate">
+
+                    <TextView
+                        android:id="@+id/reviewerid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:textColor="#4D4D4D"
+                        android:textSize="@dimen/revieweridTextSize"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/isMod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/reviewerid"
+                        android:singleLine="true"
+                        android:textColor="#0F98EC" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/reviewedDate"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="#999"
+                    android:textSize="@dimen/reviewedDateTextSize" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/revieweridLayout">
+
+                <RatingBar
+                    android:id="@+id/reviewRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="-3dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/small_ratingbar" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/titleAndBodyAndImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reviewerImageAndRevieweridLayout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/reviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#4c4c4c"
+            android:textSize="@dimen/reviewTitleTextSize"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <ImageView
+                android:id="@+id/reviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_image_height"
+                android:adjustViewBounds="true"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:scaleType="centerCrop" />
+
+            <WebView
+                android:id="@+id/videoPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_image_height"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="8dp"
+                android:scrollbars="none"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/reviewBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5sp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:textColor="#4c4c4c"
+            android:textSize="@dimen/reviewBodyTextSize" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reviewCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleAndBodyAndImageView"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/helpful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:textColor="#999" />
+
+        <TextView
+            android:id="@+id/replies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:textColor="#999" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_below="@+id/reviewCount"
+        android:layout_marginTop="8dp"
+        android:background="#d6d6d6"
+        android:paddingBottom="32dp"
+        android:paddingTop="16dp" />
+
+</RelativeLayout>
