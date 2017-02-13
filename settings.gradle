@@ -1,1 +1,1 @@
-include ':streamhub-comments', ':streamhub-android-sdk', ':streamhub-reviews'
+include ':examples:streamhub-comments', ':streamhub-android-sdk', ':examples:streamhub-reviews'
