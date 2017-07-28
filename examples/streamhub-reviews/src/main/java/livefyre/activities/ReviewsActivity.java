@@ -120,6 +120,12 @@ public class ReviewsActivity extends BaseActivity implements ContentUpdateListen
             }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        StreamClient.stop();
+    }
+
     void sortReviews(Boolean viewpoint) {
         if (!isNetworkAvailable()) {
             showToast("Network Not Available");
