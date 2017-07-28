@@ -10,6 +10,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -33,4 +34,5 @@ dependencies {
     compile 'io.filepicker:filepicker-android:3.8.13'
     compile 'com.android.support:design:25.0.0'
     compile project(':streamhub-android-sdk')
+    compile 'com.android.support:multidex:1.0.1'
 }
