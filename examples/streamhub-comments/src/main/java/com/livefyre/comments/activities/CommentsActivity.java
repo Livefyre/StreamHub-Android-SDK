@@ -242,6 +242,12 @@ public class CommentsActivity extends BaseActivity implements ContentUpdateListe
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        StreamClient.stop();
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {

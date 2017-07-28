@@ -7,6 +7,7 @@ import android.util.Log;
 import com.livefyre.streamhub_android_sdk.network.HttpClient;
 import com.livefyre.streamhub_android_sdk.util.LivefyreConfig;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestHandle;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +19,10 @@ import java.net.MalformedURLException;
 import cz.msebera.android.httpclient.Header;
 
 public class StreamClient {
+
+    private static RequestHandle mStreamRequestHandle;
+    private static boolean isStopped;
+
     public static String generateStreamUrl(String collectionId, String eventId) throws MalformedURLException {
         final Builder uriBuilder = new Uri.Builder()
                 .scheme(LivefyreConfig.scheme)
@@ -45,9 +50,10 @@ public class StreamClient {
             final String collectionId, final String eventId,
             final AsyncHttpResponseHandler handler) throws IOException,
             JSONException {
+        isStopped = true;
         final String streamEndpoint = generateStreamUrl(
                 collectionId, eventId);
-        HttpClient.client.get(streamEndpoint, new AsyncHttpResponseHandler() {
+        mStreamRequestHandle = HttpClient.client.get(streamEndpoint, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 String response = new String(bytes);
@@ -61,8 +67,7 @@ public class StreamClient {
                             lastEvent = responseJson.getJSONObject("data")
                                     .getString("maxEventId");
 
-                            pollStreamEndpoint(collectionId,
-                                    lastEvent, handler);
+                            if (isStopped) pollStreamEndpoint(collectionId, lastEvent, handler);
                         }
                     }
                 } catch (JSONException e) {
@@ -77,7 +82,7 @@ public class StreamClient {
             @Override
             public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
                 try {
-                    pollStreamEndpoint(collectionId, eventId, handler);
+                    if (isStopped) pollStreamEndpoint(collectionId, eventId, handler);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -87,5 +92,13 @@ public class StreamClient {
                 }
             }
         });
+    }
+
+    public static void stop() {
+        if (null != mStreamRequestHandle) {
+            isStopped = false;
+            mStreamRequestHandle.cancel(true);
+            mStreamRequestHandle=null;
+        }
     }
 }
