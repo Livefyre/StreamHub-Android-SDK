@@ -19,7 +19,7 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 
 /**
- * @author kvanainc1
+ * @author Adobe Systems Incorporated
  */
 public class WriteClient {
     private static final String TAG = "WriteClient";

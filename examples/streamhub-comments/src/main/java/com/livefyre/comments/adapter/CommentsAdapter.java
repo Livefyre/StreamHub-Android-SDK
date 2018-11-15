@@ -24,7 +24,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
- * Created by kvanadev5 on 02/02/15.
+ * Created by Adobe Systems Incorporated on 02/02/15.
  */
 public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.MyViewHolder> {
     private LayoutInflater mLayoutInflater;

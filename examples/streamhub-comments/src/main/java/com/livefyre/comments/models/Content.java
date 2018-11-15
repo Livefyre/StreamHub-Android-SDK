@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by kvanadev5 on 18/03/15.
+ * Created by Adobe Systems Incorporated on 18/03/15.
  */
 public class Content implements Serializable {
 
