@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 import java.util.Map;
 
 /**
- * @author zjj
+ * @author Adobe Systems Incorporated
  */
 public class BootstrapClient {
     public static final String TAG = BootstrapClient.class.getSimpleName();

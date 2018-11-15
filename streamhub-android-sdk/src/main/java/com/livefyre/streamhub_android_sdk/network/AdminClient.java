@@ -12,7 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 
 /**
- * @author Kvana Dev
+ * @author Adobe Systems Incorporated
  */
 public class AdminClient {
     /**

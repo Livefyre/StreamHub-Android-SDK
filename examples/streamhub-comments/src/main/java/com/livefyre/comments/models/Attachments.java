@@ -1,7 +1,7 @@
 package com.livefyre.comments.models;
 
 /**
- * Created by kvanadev5 on 07/04/15.
+ * Created by Adobe Systems Incorporated on 07/04/15.
  */
 public class Attachments {
     private String url;

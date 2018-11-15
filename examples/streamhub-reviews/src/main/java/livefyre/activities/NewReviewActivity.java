@@ -37,7 +37,7 @@ import livefyre.LFSConfig;
 import livefyre.R;
 
 /**
- * Created by kvanadev5 on 16/06/15.
+ * Created by Adobe Systems Incorporated on 16/06/15.
  */
 
 public class NewReviewActivity extends BaseActivity {

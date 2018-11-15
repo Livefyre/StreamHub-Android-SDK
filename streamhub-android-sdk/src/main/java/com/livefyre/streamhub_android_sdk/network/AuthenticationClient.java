@@ -12,7 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by kvanamac3 on 7/22/16.
+ * Created by Adobe Systems Incorporated on 7/22/16.
  */
 public class AuthenticationClient {
     public interface ResponseHandler {

@@ -3,7 +3,7 @@ package com.livefyre.comments.manager;
 import com.squareup.otto.Bus;
 
 /**
- * Created by Hari on 16/06/16.
+ * Created by Adobe Systems Incorporated on 16/06/16.
  */
 public class LfManager {
     private static LfManager ourInstance = new LfManager();
